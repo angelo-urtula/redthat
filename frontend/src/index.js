@@ -8,6 +8,7 @@ import {createStore, applyMiddleware} from "redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import thunk from "redux-thunk";
 import combinedReducers from "./reducers/combinedReducer.js";
+import UsersContainer from "./containers/UsersContainer.js"
 
 const store = createStore(combinedReducers, applyMiddleware(thunk))
 
@@ -16,8 +17,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
     <Route exact path="/" component={App} />
-    <Route exact path="/about" component={About} />
-    <Route exact path="/users" component={Users} />
+    
+    <Route exact path="/users" component={UsersContainer} />
     </Router>
   </Provider>
   ,
