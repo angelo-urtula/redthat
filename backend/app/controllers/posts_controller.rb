@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     def index
         posts = Post.all
-        render json: post.to_json(include: [:user])
+        render json: posts.to_json(include: [:user])
     end
 
     def create
