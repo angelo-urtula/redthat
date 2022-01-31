@@ -1,6 +1,6 @@
-import userReducer from './userReducer'
-import postReducer from './postReducer'
-import { combineReducers } from 'redux'
+import userReducer from './userReducer.js'
+import postReducer from './postReducer.js'
+import { combineReducers } from "redux"
 
 const combinedReducers = combineReducers({
     user: userReducer,
