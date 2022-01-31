@@ -1,15 +1,17 @@
 const postReducer = (state = { posts:[], loading: false }, action) => {
     switch (action.type) {
-        case "LOADING_USERS":
+        case "LOADING_POSTS":
             return {
                 ...state,
-                users: [...state.users],
+                
+                post: [...state.post],
                 loading: true,
             };
-        case "ADD_USERS":
+        case "ADD_POSTS":
             return {
                 ...state,
-                users: action.users,
+                
+                post: action.posts,
                 loading: false,
             };
             default:
