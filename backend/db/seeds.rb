@@ -11,5 +11,6 @@ Post.destroy_all
 
 
 User.create(:name => "Angelo", :email => "random@yahoo.com", :hobbies => "watch tv")
+User.create(:name => "Angelo2", :email => "random2@yahoo.com", :hobbies => "watch tv2")
 
 Post.create(:user_id => 2, :title => "I like to eat", :content => "Hi, my name is Angelo and I like to eat food")
