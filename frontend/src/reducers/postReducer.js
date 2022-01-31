@@ -4,7 +4,7 @@ const postReducer = (state = { posts:[], loading: false }, action) => {
             return {
                 ...state,
                 
-                post: [...state.post],
+                post: [...state.posts],
                 loading: true,
             };
         case "ADD_POSTS":
