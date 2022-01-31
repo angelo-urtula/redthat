@@ -5,15 +5,22 @@ import App from './App';
 //import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import {createStore, applyMiddleware} from "redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import thunk from "redux-thunk";
 import combinedReducers from "./reducers/combinedReducer.js";
 
 const store = createStore(combinedReducers, applyMiddleware(thunk))
 
 ReactDOM.render(
+  
   <Provider store={store}>
-    <App />
-  </Provider>,
+    <Router>
+    <Route exact path="/" component={App} />
+    <Route exact path="/about" component={About} />
+    <Route exact path="/users" component={Users} />
+    </Router>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
