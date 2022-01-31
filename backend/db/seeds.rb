@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Post.destroy_all
+
 
 User.create(:name => "Angelo", :email => "random@yahoo.com", :hobbies => "watch tv")
 
-Post.create(:user_id => 3, :title => "I like to eat", :content => "Hi, my name is Angelo and I like to eat food")
+Post.create(:user_id => 2, :title => "I like to eat", :content => "Hi, my name is Angelo and I like to eat food")
