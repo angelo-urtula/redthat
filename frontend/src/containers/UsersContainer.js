@@ -6,8 +6,6 @@ import { fetchUsers } from "../actions/userActions"
 
 class UsersContainer extends Component {
     componentDidMount(){
-        console.log("this component mounted")
-        console.log(this.props)
         this.props.fetchUsers()
     }
     render () {
