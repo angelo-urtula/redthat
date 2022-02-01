@@ -6,13 +6,13 @@ import { fetchPosts } from "../actions/postActions"
 
 class PostsContainer extends Component {
     componentDidMount(){
-        this.props.fetchPosts()
+        this.props.fetchPosts()        
     }
     render () {
         console.log(this.props.posts)
         return(
             <div>
-                <Posts posts={this.props.posts} />
+              <Posts posts={this.props.posts} />
             </div>
         )
     }
