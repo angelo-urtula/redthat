@@ -21,7 +21,7 @@ class PostsContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         posts: state.post.posts, 
-        post_loading: state.post_loading}
+        post_loading: state.post.post_loading}
 }
 
 const mapDispatchToProps = (dispatch) => {

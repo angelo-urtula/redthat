@@ -21,7 +21,7 @@ class UsersContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         users: state.user.users, 
-        user_loading: state.user_loading}
+        user_loading: state.user.user_loading}
 }
 
 const mapDispatchToProps = (dispatch) => {
