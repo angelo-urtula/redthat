@@ -3,14 +3,14 @@ const post = (state = { posts:[], post_loading: false }, action) => {
         case "LOADING_POSTS":
             return {
                 ...state,                
-                post: [...state.posts],
+                posts: [...state.posts],
                 post_loading: true,
             };
         case "ADD_POSTS":
             return {
                 ...state,
                 
-                post: action.posts,
+                posts: action.posts,
                 post_loading: false,
             };
             default:
