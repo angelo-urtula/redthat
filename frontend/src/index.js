@@ -9,17 +9,16 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import thunk from "redux-thunk";
 import combinedReducers from "./reducers/combinedReducer.js";
 import UsersContainer from "./containers/UsersContainer.js"
-import userReducer from "./reducers/userReducer.js"
+import PostsContainer from "./containers/PostsContainer.js"
 
 const store = createStore(combinedReducers, applyMiddleware(thunk))
-console.log(store.getState().user.users)
 
 ReactDOM.render(
   
   <Provider store={store}>
     <Router>
     <Route exact path="/" component={App} />
-    
+    <Route exact path="/posts" component={PostsContainer}/>
     <Route exact path="/users" component={UsersContainer} />
     </Router>
   </Provider>
