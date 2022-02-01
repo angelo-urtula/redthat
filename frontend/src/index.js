@@ -9,8 +9,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import thunk from "redux-thunk";
 import combinedReducers from "./reducers/combinedReducer.js";
 import UsersContainer from "./containers/UsersContainer.js"
+import userReducer from "./reducers/userReducer.js"
 
 const store = createStore(combinedReducers, applyMiddleware(thunk))
+console.log(store.getState().user.users)
 
 ReactDOM.render(
   

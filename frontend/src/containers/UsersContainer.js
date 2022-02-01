@@ -14,7 +14,7 @@ class UsersContainer extends Component {
         console.log(this.props.users)
         return(
             <div>
-                Hi
+                <Users users={this.props.users} />
             </div>
         )
     }
@@ -22,8 +22,8 @@ class UsersContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.users, 
-        loading: state.loading}
+        users: state.user.users, 
+        user_loading: state.user_loading}
 }
 
 const mapDispatchToProps = (dispatch) => {

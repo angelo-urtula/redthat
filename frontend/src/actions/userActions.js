@@ -6,7 +6,7 @@ export const fetchUsers = () => {
             return response.json()
         })
         .then((responseJSON) => {
-            responseJSON.map((user) => console.log(user))
+            dispatch({ type: "ADD_USERS", users: responseJSON})
         })
     }
 }
