@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :authorize, only: [:update, :destroy]
+
     def index
         users = User.all
         render json: users.to_json(include: [:posts])
@@ -33,6 +35,10 @@ class UsersController < ApplicationController
     private
     def set_user
         @user = User.find(params[:id])
+    end
+
+    def authorize
+        return render json: {error: "Unauthorized action"}, status: :unauthorized unless session.include? :user_id
     end
 
     def user_params
