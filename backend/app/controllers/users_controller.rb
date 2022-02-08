@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     end
 
     def wristband
-        user = User.find_by(id: session[:user_id])
+        user = User.find_by(:id => session[:user_id])
         if user
             render json: user
         else
-            render json: {error: "Not authorized"}
+            render json: {error: "Not logged in"}
         end
     end
 
