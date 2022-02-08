@@ -1,7 +1,7 @@
 export const fetchUsers = () => {
     return (dispatch) => {
         dispatch({ type: "LOADING_USERS"});
-        fetch("http://localhost:9292/users")
+        fetch("http://127.0.0.1:3001/users")
         .then((response) => {
             return response.json()
         })
