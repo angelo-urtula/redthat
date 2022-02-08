@@ -1,7 +1,7 @@
 export const fetchPosts = () => {
     return (dispatch) => {
         dispatch({ type: "LOADING_POSTS"});
-        fetch("http://172.25.95.70:9292/posts")
+        fetch("http://localhost:9292/posts")
         .then((response) => {
             return response.json()
         })
