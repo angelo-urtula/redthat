@@ -9,12 +9,20 @@ function App() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    fetch("http://localhost:9292/me").then((response) => {
+    fetch("http://127.0.0.1:3001/me").then((response) => {
       if (response.ok) {
-        response.json().then((user) => setUser(user))
+        response.json().then((user) => console.log(user))
       }
     })
   }, [])
+
+  function handleLogin(user) {
+    setUser(user)
+  }
+
+  function handleLogout() {
+    setUser(null)
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +32,6 @@ function App() {
          </h1>
       </header>
       <Switch>
-      <Route exact path="/" component={App} />
       <Route exact path="/posts" component={PostsContainer}/>
       <Route exact path="/users" component={UsersContainer}/>
       <Route exact path="/login">
