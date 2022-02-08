@@ -10,6 +10,15 @@ class UsersController < ApplicationController
         render json: @user
     end
 
+    def wristband
+        user = User.find_by(id: session[:user_id])
+        if user
+            render json: user
+        else
+            render json: {error: "Not authorized"}
+        end
+    end
+
     def create
         @user = User.new(user_params)
 
